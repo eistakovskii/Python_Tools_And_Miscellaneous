@@ -1,3 +1,15 @@
+# for making a frequency table easily
+from collections import Counter
+
+import numpy as np                  # import numpy to make numerical computations.
+import nltk                         # import NLTK to handle simple NL tasks like tokenization.
+nltk.download("punkt")
+from nltk.util import ngrams
+from collections import Counter     # import the Counter module.
+# !pip3 install 'sacrebleu'           # install the sacrebleu package.
+import sacrebleu                    # import sacrebleu in order compute the BLEU score.
+
+
 def jaccard_similarity(candidate, reference):
     """Returns the Jaccard similarity between two token lists
 
@@ -23,8 +35,7 @@ def jaccard_similarity(candidate, reference):
     
     return overlap
 
-# for making a frequency table easily
-from collections import Counter
+
 
 def rouge1_similarity(system, reference):
     """Returns the ROUGE-1 score between two token lists
@@ -71,14 +82,6 @@ def rouge1_similarity(system, reference):
         rouge1_score = 0 
     
     return rouge1_score
-
-import numpy as np                  # import numpy to make numerical computations.
-import nltk                         # import NLTK to handle simple NL tasks like tokenization.
-nltk.download("punkt")
-from nltk.util import ngrams
-from collections import Counter     # import the Counter module.
-# !pip3 install 'sacrebleu'           # install the sacrebleu package.
-import sacrebleu                    # import sacrebleu in order compute the BLEU score.
 
 def brevity_penalty(reference, candidate):
     ref_length = len(reference)
