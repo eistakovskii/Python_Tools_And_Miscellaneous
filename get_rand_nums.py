@@ -1,6 +1,6 @@
 from random import randint
 
-def get_n_randints(quant: int, t_list: list) -> list:
+def get_n_randints(quant: int, t_list: list) -> list[int]:
     '''
     Use this function to generate N (quant) number of integers from the range of 0 to X (t_list - 1) numbers
     
