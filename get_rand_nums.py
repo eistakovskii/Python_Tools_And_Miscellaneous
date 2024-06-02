@@ -1,5 +1,6 @@
 from random import randint
 from random import seed
+import random
 
 def get_n_randints(quant: int, t_list: list, rand_seed = 42) -> list[int]:
     '''
@@ -15,3 +16,8 @@ def get_n_randints(quant: int, t_list: list, rand_seed = 42) -> list[int]:
     seed(rand_seed)
     len_thr = len(t_list) - 1
     return [randint(0, len_thr) for _ in range(quant)]
+
+def generate_random_indices(input_list, seed, n):
+    random.seed(seed)
+    random_indices = random.sample(range(len(input_list)), n)
+    return random_indices
